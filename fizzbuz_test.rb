@@ -12,11 +12,11 @@ class TestMath < Minitest::Test  #The word Math is the name of your project
 	end
 
 	def test_buz
-		assert_equal("buz",buz(30))
+		assert_equal("buz",buz(15))
 	end
 
 	def test_fizzbuz
-		assert_equal("fizzbuz",fizzbuz(30))
+		assert_equal("fizzbuz",fizzbuz(45))
 	end
 
 
