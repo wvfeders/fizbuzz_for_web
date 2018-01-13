@@ -1,32 +1,54 @@
-<% start1 = start.to_i %>
-<% finish1 = finish.to_i %>
-<% count = start1
+<% start1 = start.to_i 
+ finish1 = finish.to_i 
+ total = finish1 -start1
+ count = start1
 results = Array.new
 while count < finish1 do 
 	$reply = count
 	fizz(count)
 	buz(count)
 	fizzbuz(count)
-	
-
-	# buz(count)
-
-	# fizzbuz(count)
 
 	count = count + 1
-# if $reply == "fizz"
-# 	puts $reply
-# else 
+
 	puts $reply	
-# end
-results.push($reply)
+
+results.push([$reply])
 
 end
 %>
-<%= $reply %>
+
 You want to start at <%= start1 %> <br>
 
 and finish at <%= finish1 %>
 <br>
 <br>
-<%= results %>
+
+
+<html>
+<body>
+
+
+
+
+<p id="demo2"></p>
+
+<script>
+var results = <%= results %>;
+var total = <%= total %>
+
+
+var text = "";
+var i;
+for (i = 0; i < total ; i++) {
+   
+   
+   text += results[i] + "<br>";}
+    document.getElementById("demo2").innerHTML = text;
+
+
+
+</script>
+
+</body>
+</html>
